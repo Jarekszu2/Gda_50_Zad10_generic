@@ -33,7 +33,7 @@ public class Zapisywacz<T> {
     public void utworzListeIZapiszDoPliku(T ...v) {
         List<T> lista = new ArrayList<>(Arrays.asList(v));
         String listToString = GSON.toJson(lista);
-        try (PrintWriter printWriter = new PrintWriter(new FileWriter("listOfT"))) {
+        try (PrintWriter printWriter = new PrintWriter(new FileWriter("listOfT.json"))) {
             printWriter.print(listToString);
         } catch (IOException e) {
             System.err.println("Błąd wejścia-wyjścia.");
